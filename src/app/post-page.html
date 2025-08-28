@@ -1,0 +1,16 @@
+<button matButton="outlined" routerLink="/" class="mb-4">&lt; Back</button>
+
+@if (isPostError) {
+    <div class="text-red-700">An error occured. Try reloading the page.</div>
+} @else {
+    <div>
+        @if (post === null) {
+            <div class="place-center h-20">Loading...</div>
+        } @else {
+            <h1 class="mb-4 text-3xl">{{ post.title }}</h1>
+            <div>{{ post.authorName }}</div>
+            <div class="mb-8">{{ post.authorEmail }}</div>
+            <p>{{ post.body }}</p>
+        }
+    </div>
+}
